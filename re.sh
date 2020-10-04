@@ -3,11 +3,17 @@
 CONFIG="$1"
 COMMAND="2"
 
+<<<<<<< HEAD
 if [ $# -ne 2 ]
 then
     echo "$0 requires two parameters {virtual-host} {restart|reload}"
     exit 1
 fi
+=======
+#only allow reload or restart
+if [ "COMMAND" == "reload" ] || [ "$COMMAND" == "restart" ]
+then
+>>>>>>> validate
 
 # Move the current execution state to the proper directory
 cd /etc/apache2/sites-available
@@ -18,4 +24,13 @@ sudo service apache2 "$COMMAND"
 
 # Enable a vhost configuration
 sudo a2ensite "$CONFIG"
+<<<<<<< HEAD
 sudo service apache2 "$COMMAND"
+=======
+sudo service apache2 "$COMMAND"
+
+else
+    echo "ERROR: $COMMAND" is an invalid service command {restart|reload}"
+    exit 1
+fi
+>>>>>>> validate
