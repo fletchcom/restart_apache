@@ -1,0 +1,31 @@
+Q In Bash, why should you quote variables when referencing them?
+A When you don't quote the variable, a variable's literal value(s) will receive the 
+action in its place. For example, if you write a comand removing $NAME, without
+quotes, the system might remove every value in your system that is assigned the
+$NAME variable, instead of a specific value that is pulled by your prorgram
+script.
+
+Q In Bash, what is -z?
+A In Bash, -z is an equality check for zero.
+
+Q In Bash, when do you prefix a variable with a dollar sign?
+A You use this prefix when you want to access a value that the variable has
+been assigned to.
+
+Q How many ways can you come up with to create an array in Bash?
+A You can create an array in Bash in two ways. You can use the declare command:
+     declare -a test_array
+You can also create an array just by assigning it elements:
+    test_array=(apple orange lemon)
+This second method can only be used for what is called a one-dimensional index 
+array, which is a series of ordered integers. Both index arrays and
+what are known as associative arrays use the declare command. Associative
+arrays can only be created with declare and are more dynamic, allowing key-value
+pairs to be retrieved through a hash table data structure. 
+
+Q What is an array?
+A Per the text, "An array is a variable that contains other variables that are 
+identified as key-to-value pairs." 
+
+Q What does the * in /etc/apache2/sites-available/*.conf do?
+A Here * acts as a wild card, pulling any values that otherwise match this sequence.
